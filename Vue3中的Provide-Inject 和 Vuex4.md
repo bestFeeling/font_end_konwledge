@@ -1,8 +1,5 @@
-# Vuex4 原理
-
+# Vuex4 原理 - Provide / Inject
 知乎上看到的文章，做个记录
-
-
 #### 数据侦测原理的改变
 - 在vuex之前的版本，数据侦测是直接创建一个新的vue实例：`new Vue()`, 在vuex4中则是使用了核心库`reactive`
     ``` js
