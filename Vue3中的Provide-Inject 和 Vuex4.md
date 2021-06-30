@@ -1,5 +1,5 @@
 # Vuex4 原理 - Provide / Inject
-知乎上看到的文章，做个记录
+知乎上看到的文章，做个记录
 #### 数据侦测原理的改变
 - 在vuex之前的版本，数据侦测是直接创建一个新的vue实例：`new Vue()`, 在vuex4中则是使用了核心库`reactive`
     ``` js
@@ -94,8 +94,7 @@ function inject(key, defaultValue, treatDefaultAsFactory = false) {
     }
 }
 ```
-
-首先的一个前提是`provides`这个存放键值对信息的数据是放在每个组件实例上的，也就是在每个组件的`setup`中使用
+首先的一个前提是`provides`这个存放键值对信息的数据是放在每个组件实例上的，也就是在每个组件的`setup`中使用
 
 其次是在`inject`寻找`provides`是遵循就近原则的，如果`instance.parent`上有`provides`，那么直接就用这个，否则拿`appContext`的`provides`,最后返回`provides[key]`作为结果
 
